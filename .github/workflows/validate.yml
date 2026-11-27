@@ -16,3 +16,10 @@ jobs:
         run: python -m unittest discover -s tests -p 'test*.py' -v
       - name: Audit examples
         run: python skills/duoready/scripts/audit_swiftui.py examples
+
+  swift:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+      - name: Type-check Swift samples
+        run: bash tests/typecheck.sh
