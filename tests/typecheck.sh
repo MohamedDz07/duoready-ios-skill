@@ -12,4 +12,9 @@ if [[ -z "$swiftc_path" || -z "$sdkroot" ]]; then
   exit 2
 fi
 echo "SDK: $sdkroot"
-echo "Type-checking is intentionally opt-in for a named target; no app project is included."
+target="${DUOREADY_SWIFT_TARGET:-arm64-apple-ios17.0-simulator}"
+"$swiftc_path" -typecheck -sdk "$sdkroot" -target "$target" \
+  "$(dirname "$0")/../examples/AdaptiveLayoutExample.swift" \
+  "$(dirname "$0")/../examples/AdaptiveUIKitExample.swift" \
+  "$(dirname "$0")/../skills/duoready/assets/DuoLayoutProbe.swift"
+echo "Swift samples type-checked for $target"
