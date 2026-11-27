@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+title: DuoReady iOS Skill
+message: If DuoReady helped your project, please cite or star the repository.
+type: software
+authors:
+  - family-names: DE
+    given-names: Mohamed
+repository-code: https://github.com/MohamedDz07/duoready-ios-skill
+license: MIT
+version: 1.0.0
+date-released: 2026-11-27
