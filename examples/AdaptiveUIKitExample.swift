@@ -1,5 +1,6 @@
 import UIKit
 
+@available(iOS 14.0, *)
 final class AdaptiveSplitViewController: UISplitViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
