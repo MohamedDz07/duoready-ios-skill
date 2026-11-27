@@ -1,0 +1,17 @@
+[
+  {
+    "id": "adaptive-two-pane",
+    "prompt": "Review a fixed HStack containing a list and detail view. Explain whether it should become a navigation split, an arrangement, or remain a stack. State what must be verified before using Duo-specific APIs.",
+    "checks": ["distinguishes navigation from layout", "mentions a compact fallback", "does not claim unverified API availability"]
+  },
+  {
+    "id": "vertical-controls",
+    "prompt": "Audit a toolbar that assumes horizontal placement and contains six text-only buttons. Give an adaptive remediation and a validation matrix.",
+    "checks": ["uses system toolbar semantics", "preserves access to actions", "tests compact and wide-short windows"]
+  },
+  {
+    "id": "evidence-boundary",
+    "prompt": "A contributor reports a hinge width from an unlabelled screenshot. Decide whether it can be added as a documented metric.",
+    "checks": ["rejects unsupported precision", "requests runtime/device/pose provenance", "offers a reproducible measurement format"]
+  }
+]

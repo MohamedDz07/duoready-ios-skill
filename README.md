@@ -1,51 +1,55 @@
 # DuoReady iOS Skill
 
-An AI-agent skill and lightweight static audit toolkit for making iOS interfaces adaptive across compact, regular, and wide layouts.
+An original Agent Skills-compatible skill for auditing and adapting iOS interfaces to changing display sizes, including iPhone Duo when the app's SDK and deployment target provide the relevant APIs.
 
-> **Scope note:** This project focuses on resilient adaptive UI patterns for current SwiftUI and UIKit projects. It does not assume unreleased foldable-iPhone hardware, hinge APIs, or unannounced Apple SDK capabilities.
+This repository is evidence-led. It separates stable SwiftUI/UIKit practices from iPhone Duo APIs that must be confirmed in the installed Xcode SDK. It does not claim hardware measurements, simulator results, compilation, or API availability unless a local check produced them.
 
-## What it helps with
+## Use it
 
-- Review SwiftUI and UIKit layouts for hard-coded sizing and positioning.
-- Identify layout patterns that may break when available space changes.
-- Recommend adaptive composition, readable content widths, and robust navigation.
-- Check safe-area, keyboard, Dynamic Type, and accessibility considerations.
-- Run a fast, dependency-free source scan to highlight patterns worth reviewing.
-
-## Quick start
-
-Run the static heuristic scanner with Python 3.9+:
+Read `skills/duoready/SKILL.md` before asking an agent to audit or modify an iOS interface. Run:
 
 ```bash
-python3 skills/duoready/scripts/audit_swiftui.py /path/to/YourApp
+python3 skills/duoready/scripts/audit_swiftui.py path/to/App
 ```
 
-The scanner reports candidate issues with file paths and line numbers. It is a review aid, **not** a Swift compiler, UI test, or proof that a layout is broken.
+or use the portable wrapper:
 
-## Repository map
+```bash
+bash skills/duoready/scripts/audit.sh path/to/App
+```
 
-- `skills/duoready/SKILL.md` — instructions for an AI coding agent.
-- `skills/duoready/references/adaptive-layout.md` — adaptive layout guidance and examples.
-- `skills/duoready/scripts/audit_swiftui.py` — standard-library source scanner.
-- `docs/validation-checklist.md` — manual and simulator validation checklist.
-- `examples/AdaptiveLayoutExample.swift` — small SwiftUI example.
+The audit emits review candidates only; it is not a compiler or UI test.
 
-## Suggested workflow
+## Layout
 
-1. Inspect the app's deployment target, supported devices, navigation model, and design system.
-2. Run the scanner and review each finding in context.
-3. Refactor fixed assumptions into adaptive layout decisions.
-4. Validate compact, regular, and wide available sizes, including short-height and accessibility cases.
-5. Record device/simulator configuration and any remaining limitations.
+- `skills/duoready/SKILL.md` — agent workflow and guardrails.
+- `skills/duoready/references/` — API evidence and adaptive patterns.
+- `skills/duoready/scripts/` — static audit and optional SDK surface check.
+- `skills/duoready/assets/` — optional DEBUG layout probe.
+- `examples/` — small SwiftUI and UIKit patterns.
+- `tests/` — standard-library tests and an SDK-gated type-check entry point.
+- `evals/` — evaluation prompts and structural grader.
 
-## Compatibility
+## Evidence boundary
 
-The guidance uses established SwiftUI and UIKit concepts. Confirm API availability against your app's deployment target and the current Apple documentation before adopting an API.
+The iPhone Duo guidance is based on Apple's public documentation and Tech Talks, linked in `references/source-register.md`. API names are not treated as locally available until `check_sdk.sh` or an actual Xcode build confirms them.
+
+## Validation
+
+Run the repository checks with Python 3.9 or newer:
+
+```bash
+python3 -m unittest discover -s tests -p 'test*.py' -v
+bash skills/duoready/scripts/check_sdk.sh
+bash tests/typecheck.sh
+```
+
+The SDK check returns status `2` when Xcode or an iPhoneOS SDK is unavailable. That means “not verified”, not “the API is absent”. See `docs/validation-checklist.md` before claiming simulator or device validation.
 
 ## Contributing
 
-Issues and pull requests are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md).
+See `CONTRIBUTING.md`. Keep Apple API claims linked to primary documentation and label anything not verified by the installed SDK or a reproducible build.
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT — see `LICENSE`.

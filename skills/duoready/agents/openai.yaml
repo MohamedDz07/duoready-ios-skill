@@ -1,0 +1,3 @@
+display_name: DuoReady iOS
+short_description: Audit adaptive SwiftUI and UIKit layouts for changing iOS windows and iPhone Duo.
+default_prompt: Review this iOS app with the DuoReady skill. Start with the source audit, verify the installed SDK before using Duo-specific APIs, and report evidence, changes, tests, and limitations.
