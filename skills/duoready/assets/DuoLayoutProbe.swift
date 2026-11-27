@@ -2,7 +2,7 @@ import SwiftUI
 
 /// Optional DEBUG-only probe. It reports ordinary geometry; Duo-specific region
 /// queries must be added only after the installed SDK confirms their spelling.
-@available(iOS 16.0, *)
+@available(iOS 17.0, *)
 struct DuoLayoutProbe<Content: View>: View {
     let label: String
     @ViewBuilder let content: () -> Content
