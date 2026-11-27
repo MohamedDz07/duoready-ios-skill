@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 17.0, *)
 struct AdaptiveLayoutExample: View {
     var body: some View {
         NavigationSplitView {
