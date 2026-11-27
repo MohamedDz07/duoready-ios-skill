@@ -12,6 +12,12 @@ Read `skills/duoready/SKILL.md` before asking an agent to audit or modify an iOS
 python3 skills/duoready/scripts/audit_swiftui.py path/to/App
 ```
 
+or use the portable wrapper:
+
+```bash
+bash skills/duoready/scripts/audit.sh path/to/App
+```
+
 The audit emits review candidates only; it is not a compiler or UI test.
 
 ## Layout
