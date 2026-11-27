@@ -23,6 +23,10 @@ bash skills/duoready/scripts/audit.sh path/to/App
 
 The audit emits review candidates only; it is not a compiler or UI test.
 
+## Try Duo
+
+For a quick visual exploration of a two-screen iPhone Duo-style layout, use the [Duo simulator](https://duo.doan-labs.com/simulator). It is an external tool and does not replace an Xcode build, SDK check, simulator run, or hardware validation.
+
 ## Install
 
 For Codex:
