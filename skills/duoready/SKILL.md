@@ -20,7 +20,7 @@ Treat the app's actual deployment target, installed SDK, source tree, and build 
 5. For Duo-specific work, run `bash scripts/check_sdk.sh` first. If the SDK does not expose an API, mark it unavailable locally and do not write code that assumes it compiles.
 6. Validate compact, regular, wide, short-height, accessibility, keyboard, RTL, split-view, and scene-reconnection states. Record exact Xcode, SDK, runtime, and device/simulator configuration.
 
-Read only the reference needed for the task. Use `references/api-reference.md` for spellings and confidence, `references/arrangement-views.md` for two-pane or layered content, `references/reserved-regions.md` for fold/camera avoidance, `references/vertical-controls.md` for bars, `references/split-views.md` for navigation, `references/camera-and-scenes.md` for media and scene identity, `references/device-and-metrics.md` for measurements, and `references/verification.md` for test protocol.
+Read only the reference needed for the task. Use `references/api-reference.md` for spellings and confidence, `references/arrangement-views.md` for two-pane or layered content, `references/reserved-regions.md` for fold/camera avoidance, `references/vertical-controls.md` for bars, `references/split-views.md` for navigation, `references/camera-and-scenes.md` for media and scene identity, `references/device-and-metrics.md` for measurements, `references/audit-checklist.md` for an existing-app review, and `references/verification.md` plus `references/simulator-verification.md` for validation protocol.
 
 ## API confidence labels
 
