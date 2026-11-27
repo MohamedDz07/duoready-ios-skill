@@ -35,6 +35,7 @@ Run the repository checks with Python 3.9 or newer:
 ```bash
 python3 -m unittest discover -s tests -p 'test*.py' -v
 bash skills/duoready/scripts/check_sdk.sh
+bash tests/typecheck.sh
 ```
 
 The SDK check returns status `2` when Xcode or an iPhoneOS SDK is unavailable. That means “not verified”, not “the API is absent”. See `docs/validation-checklist.md` before claiming simulator or device validation.
