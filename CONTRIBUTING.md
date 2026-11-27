@@ -8,6 +8,7 @@ Keep changes small, reproducible, and explicit about evidence.
 python3 -m unittest discover -s tests -p 'test*.py' -v
 python3 skills/duoready/scripts/audit_swiftui.py examples
 bash skills/duoready/scripts/check_sdk.sh
+bash tests/typecheck.sh
 ```
 
 Do not report an API as locally available unless the installed SDK or an actual app build confirms it. For simulator or hardware observations, record the Xcode version, SDK/runtime, device, pose, and exact reproduction steps. Do not include Apple source code or copied prose.
