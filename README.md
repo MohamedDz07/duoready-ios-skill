@@ -19,8 +19,10 @@ The audit emits review candidates only; it is not a compiler or UI test.
 - `skills/duoready/SKILL.md` — agent workflow and guardrails.
 - `skills/duoready/references/` — API evidence and adaptive patterns.
 - `skills/duoready/scripts/` — static audit and optional SDK surface check.
+- `skills/duoready/assets/` — optional DEBUG layout probe.
 - `examples/` — small SwiftUI and UIKit patterns.
-- `tests/` — standard-library tests.
+- `tests/` — standard-library tests and an SDK-gated type-check entry point.
+- `evals/` — evaluation prompts and structural grader.
 
 ## Evidence boundary
 
