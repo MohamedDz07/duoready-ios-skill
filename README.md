@@ -26,6 +26,21 @@ The audit emits review candidates only; it is not a compiler or UI test.
 
 The iPhone Duo guidance is based on Apple's public documentation and Tech Talks, linked in `references/source-register.md`. API names are not treated as locally available until `check_sdk.sh` or an actual Xcode build confirms them.
 
+## Validation
+
+Run the repository checks with Python 3.9 or newer:
+
+```bash
+python3 -m unittest discover -s tests -p 'test*.py' -v
+bash skills/duoready/scripts/check_sdk.sh
+```
+
+The SDK check returns status `2` when Xcode or an iPhoneOS SDK is unavailable. That means “not verified”, not “the API is absent”. See `docs/validation-checklist.md` before claiming simulator or device validation.
+
+## Contributing
+
+See `CONTRIBUTING.md`. Keep Apple API claims linked to primary documentation and label anything not verified by the installed SDK or a reproducible build.
+
 ## License
 
 MIT — see `LICENSE`.
